@@ -1,11 +1,11 @@
-import java.util.*;
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Scanner scannerTitle = new Scanner(System.in);
-        Scanner scannerDescription = new Scanner(System.in);
-
+        Task task = new Task();
+        int i = 0;
         while (true) {
             try {
                 System.out.println("\nВыберите пункт из меню.");
@@ -14,23 +14,15 @@ public class Main {
                 repit:
                 switch (vvod) {
                     case (1):
-                        System.out.println("Назваание задачи");
-                        String title = scannerTitle.nextLine();
-
-                        System.out.println("Описание");
-                        String description = scannerDescription.nextLine();
-
-                        Task task = new Task(title, description);
-                        ArrayList<TaskService> list = new ArrayList<>();
-                        list.add(task);
-                        System.out.println(list);
+                        i++;
+                        task.addTask(i);
                         break repit;
                     case (2):
-                        System.out.println("2");
-                        break;
+                        task.removeTask();
+                        break repit;
                     case (3):
-                        System.out.println("3");
-                        break;
+                        task.printTask();
+                        break repit;
                     case (4):
                         System.exit(0);
                     default:
@@ -38,9 +30,8 @@ public class Main {
                         break repit;
                 }
             } catch (InputMismatchException e) {
-                throw new InputMismatchException("Неправильный формат данных!");
+                System.out.println("Неправильный формат данных!");// рекурсия
             }
-
         }
     }
 }
