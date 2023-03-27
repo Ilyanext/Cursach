@@ -1,32 +1,32 @@
 import java.time.LocalDate;
 
 public class NewData {
-    public String dataNow() {
+    public LocalDate dataNow() {
         LocalDate date = LocalDate.now(); // получаем текущую дату
         int year = date.getYear();
         int month = date.getMonthValue();
         int dayOfMonth = date.getDayOfMonth();
 
-        return dayOfMonth + "." + month + "." + year;
+        return date;
     }
 
-    public static String choiceTime(int time) {
+    public static String choiceTime() {
         LocalData choiceTime = new LocalData();
         while (true) {
             repit:
-            switch (time) {
+            switch (Main.enterInt()) {
                 case (1):
-                    return choiceTime.OneTimeTask();
+                    return choiceTime.oneTimeTask();
                 case (2):
-                    return choiceTime.DailyTask();
+                    return choiceTime.dailyTask();
                 case (3):
-                    return choiceTime.WeeklyTask();
+                    return choiceTime.weeklyTask();
                 case (4):
-                    return choiceTime.MothlyTask();
+                    return choiceTime.mothlyTask();
                 case (5):
-                    return choiceTime.YearlyTask();
+                    return choiceTime.yearlyTask();
                 default:
-                    System.out.println("Непраильно ввели данные!");
+                    System.out.println("Попробуйте еще!");
                     break repit;
             }
 

@@ -1,52 +1,33 @@
 import java.time.LocalDate;
 
 public class LocalData {
-    public String OneTimeTask() {
+    public String oneTimeTask() {
         LocalDate date = LocalDate.now();
-        int year = date.getYear();
-        int month = date.getMonthValue();
-        int dayOfMonth = date.getDayOfMonth();
         String typeTasker = "oднократная задача.";
         return typeTasker;
     }
 
-    public String DailyTask() {
+    public String dailyTask() {
         LocalDate date = LocalDate.now();
-        int year = date.getYear();
-        int month = date.getMonthValue();
-        int dayOfMonth = date.getDayOfMonth();
-        date.plusDays(1);
-        String typeTasker = ("задачу следует выполнить до " + dayOfMonth  + "." + month + "." + year);
+        String typeTasker = ("задача на день. Следует выполнить до " + date.plusDays(1));
         return typeTasker;
     }
 
-    public String WeeklyTask() {
+    public String weeklyTask() {
         LocalDate date = LocalDate.now();
-        int year = date.getYear();
-        int month = date.getMonthValue();
-        int dayOfMonth = date.getDayOfMonth();
-        date.plusWeeks(1);
-        String typeTasker = ("задачу следует выполнить до " + dayOfMonth  + "." + month + "." + year);
+        String typeTasker = ("задача на неделю. Следует выполнить до " + date.plusWeeks(1));
         return typeTasker;
     }
 
-    public String MothlyTask() {
+    public String mothlyTask() {
         LocalDate date = LocalDate.now();
-        int year = date.getYear();
-        int month = date.getMonthValue();
-        int dayOfMonth = date.getDayOfMonth();
-        date.plusMonths(1);
-        String typeTasker = ("задачу следует выполнить до " + dayOfMonth + "." + month + "." + year);
+        String typeTasker = ("задача на месяц. Следует выполнить до " + date.plusMonths(1));
         return typeTasker;
     }
 
-    public String YearlyTask() {
+    public String yearlyTask() {
         LocalDate date = LocalDate.now();
-        int year = date.getYear();
-        int month = date.getMonthValue();
-        int dayOfMonth = date.getDayOfMonth();
-        date.plusYears(1);
-        String typeTasker = ("задачу следует выполнить до " + dayOfMonth + "." + month + "." + year);
+        String typeTasker = ("задача на год. Следует выполнить до " +  date.plusYears(1));
         return typeTasker;
     }
 }
